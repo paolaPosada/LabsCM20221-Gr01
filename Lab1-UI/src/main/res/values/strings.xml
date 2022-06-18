@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">Labs20221-Gr01</string>
+    <string name="app_name">Información Personal</string>
+    <string name="text_nombres">Nombres</string>
+    <string name="text_apellidos">Apellidos</string>
+    <string name="text_sexo">Sexo</string>
+    <string name="text_radio_hombre">Hombre</string>
+    <string name="text_radio_mujer">Mujer</string>
+    <string name="text_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="text_fecha_cambiar">Cambiar</string>
+    <string name="text_spinner_grado">Grado de escolaridad</string>
+    <string-array name="opciones_spinner_grado">
+        <item>Grado de escolaridad</item>
+        <item>Primaria</item>
+        <item>Secundaria</item>
+        <item>Universitaria</item>
+        <item>Otro</item>
+    </string-array>
+    <string name="text_button_sgt">Siguiente</string>
+
 </resources>

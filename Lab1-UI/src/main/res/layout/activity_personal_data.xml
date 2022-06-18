@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PersonalDataActivity">
+
+      <RadioButton
+          android:id="@+id/radio_hombre"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:fontFamily="@font/actor"
+          android:text="@string/text_radio_hombre"
+          android:textSize="20sp"
+          app:layout_constraintBaseline_toBaselineOf="@+id/text_sexo"
+          app:layout_constraintEnd_toStartOf="@+id/radio_mujer"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/text_sexo" />
+
+      <RadioButton
+          android:id="@+id/radio_mujer"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          android:fontFamily="@font/actor"
+          android:text="@string/text_radio_mujer"
+          android:textSize="20sp"
+          app:layout_constraintBaseline_toBaselineOf="@+id/text_sexo"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/radio_hombre" />
+
+      <TextView
+          android:id="@+id/text_sexo"
+          android:layout_width="wrap_content"
+          android:layout_height="19dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="32dp"
+          android:layout_marginEnd="32dp"
+          android:layout_marginRight="32dp"
+          android:fontFamily="@font/actor"
+          android:text="@string/text_sexo"
+          android:textSize="20sp"
+          app:layout_constraintEnd_toStartOf="@+id/radio_hombre"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/imageView3"
+          app:layout_constraintTop_toBottomOf="@+id/containerText_Apellidos" />
+
+      <TextView
+          android:id="@+id/text_fecha"
+          android:layout_width="174dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          android:layout_marginBottom="16dp"
+          android:fontFamily="@font/actor"
+          android:text="@string/text_fecha_nacimiento"
+          android:textSize="18sp"
+          app:layout_constraintBottom_toTopOf="@+id/spinner_grado"
+          app:layout_constraintEnd_toStartOf="@+id/select_fecha"
+          app:layout_constraintStart_toEndOf="@+id/imageView4"
+          app:layout_constraintTop_toBottomOf="@+id/radio_hombre" />
+
+
+      <EditText
+          android:id="@+id/select_fecha"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          android:clickable="false"
+          android:ems="10"
+          android:focusable="false"
+          android:fontFamily="@font/actor"
+          android:hint="@string/text_fecha_cambiar"
+          android:inputType="date"
+          android:maxLines="1"
+          android:minHeight="48dp"
+          android:textSize="18sp"
+          app:layout_constraintBaseline_toBaselineOf="@+id/text_fecha"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.5"
+          app:layout_constraintStart_toEndOf="@+id/text_fecha" />
+
+      <Spinner
+          android:id="@+id/spinner_grado"
+          android:layout_width="0dp"
+          android:layout_height="48dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="24dp"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          android:entries="@array/opciones_spinner_grado"
+          android:minHeight="48dp"
+          android:theme="@style/SpinnerTheme"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/imageView5"
+          app:layout_constraintTop_toBottomOf="@+id/select_fecha" />
+
+      <ImageView
+          android:id="@+id/imageView"
+          android:layout_width="38dp"
+          android:layout_height="38dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="32dp"
+          android:layout_marginBottom="16dp"
+          app:layout_constraintBottom_toTopOf="@+id/containerText_Apellidos"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          app:srcCompat="@drawable/user_solid" />
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/containerText_Nombres"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="325dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="32dp"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/imageView"
+          app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_Nombres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/actor"
+            android:hint="@string/text_nombres"
+            android:textSize="20sp" />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/containerText_Apellidos"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:layout_width="322dp"
+          android:layout_height="wrap_content"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toEndOf="@+id/imageView2"
+          app:layout_constraintTop_toBottomOf="@+id/containerText_Nombres">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText_Apellidos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/actor"
+            android:hint="@string/text_apellidos"
+            android:textSize="20sp" />
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <ImageView
+          android:id="@+id/imageView2"
+          android:layout_width="38dp"
+          android:layout_height="42dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="24dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/containerText_Nombres"
+          app:srcCompat="@drawable/user_plus_solid" />
+
+      <ImageView
+          android:id="@+id/imageView3"
+          android:layout_width="38dp"
+          android:layout_height="38dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="32dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView2"
+          app:srcCompat="@drawable/user_group_solid" />
+
+      <ImageView
+          android:id="@+id/imageView4"
+          android:layout_width="38dp"
+          android:layout_height="38dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="24dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView3"
+          app:srcCompat="@drawable/calendar_days_solid" />
+
+      <ImageView
+          android:id="@+id/imageView5"
+          android:layout_width="38dp"
+          android:layout_height="38dp"
+          android:layout_marginStart="16dp"
+          android:layout_marginLeft="16dp"
+          android:layout_marginTop="32dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView4"
+          app:srcCompat="@drawable/graduation_cap_solid" />
+
+      <Button
+          android:id="@+id/button_sgte"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="16dp"
+          android:layout_marginEnd="32dp"
+          android:layout_marginRight="32dp"
+          android:layout_marginBottom="16dp"
+          android:fontFamily="@font/actor"
+          android:text="@string/text_button_sgt"
+          android:textSize="16sp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/spinner_grado" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
