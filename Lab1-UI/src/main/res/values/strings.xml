@@ -16,5 +16,11 @@
         <item>Otro</item>
     </string-array>
     <string name="text_button_sgt">Siguiente</string>
+    <string name="text_telefono">Telefono</string>
+    <string name="text_correo">Correo</string>
+    <string name="text_pais">Pais</string>
+    <string name="text_ciudad">Ciudad</string>
+    <string name="autocomplete_text_ciudad">Ciudad</string>
+    <string name="text_direccion">Direccion</string>
 
 </resources>

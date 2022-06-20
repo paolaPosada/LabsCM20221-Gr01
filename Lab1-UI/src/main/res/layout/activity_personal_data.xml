@@ -131,7 +131,7 @@
           app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_Nombres"
+            android:id="@+id/editText_Direccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/actor"
