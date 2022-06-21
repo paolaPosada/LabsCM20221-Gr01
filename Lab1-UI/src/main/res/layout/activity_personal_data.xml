@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".PersonalDataActivity">
 
+
       <RadioButton
           android:id="@+id/radio_hombre"
           android:layout_width="0dp"
@@ -131,11 +132,12 @@
           app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText_Direccion"
+            android:id="@+id/editText_Nombres"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/actor"
             android:hint="@string/text_nombres"
+            android:inputType="textCapSentences|textNoSuggestions|textEmailAddress"
             android:textSize="20sp" />
 
       </com.google.android.material.textfield.TextInputLayout>
@@ -160,6 +162,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/actor"
             android:hint="@string/text_apellidos"
+            android:inputType="textCapSentences|textNoSuggestions|textEmailAddress"
             android:textSize="20sp" />
       </com.google.android.material.textfield.TextInputLayout>
 
@@ -222,4 +225,10 @@
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/spinner_grado" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+      <RadioGroup
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          tools:layout_editor_absoluteX="140dp"
+          tools:layout_editor_absoluteY="197dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

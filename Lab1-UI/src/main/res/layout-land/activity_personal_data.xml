@@ -131,6 +131,7 @@
                 android:layout_height="match_parent"
                 android:fontFamily="@font/actor"
                 android:hint="@string/text_nombres"
+                android:inputType="textCapSentences|textNoSuggestions|textEmailAddress"
                 android:textColorHint="#78909C"
                 android:textSize="20sp" />
 
@@ -154,6 +155,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/actor"
                 android:hint="@string/text_apellidos"
+                android:inputType="textCapSentences|textNoSuggestions|textEmailAddress"
                 android:textColorHint="#78909C"
                 android:textSize="20sp" />
       </com.google.android.material.textfield.TextInputLayout>
