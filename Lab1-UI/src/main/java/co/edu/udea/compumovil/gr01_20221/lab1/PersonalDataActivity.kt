@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 
 class PersonalDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,10 +14,21 @@ class PersonalDataActivity : AppCompatActivity() {
         findViewById<EditText>(R.id.select_fecha).setOnClickListener { showDatePickerDialog() }
 
         findViewById<Button>(R.id.button_sgte).setOnClickListener {
-           val intent = Intent(this@PersonalDataActivity, ContactDataActivity::class.java)
-            startActivity(intent)
+            var etNombres = findViewById<EditText>(R.id.editText_Nombres)
+            var etApellidos = findViewById<EditText>(R.id.editText_Apellidos)
+            var etFechaNacimiento = findViewById<EditText>(R.id.select_fecha)
+            if( etNombres.text.isEmpty()  || etApellidos.text.isEmpty() || etFechaNacimiento.text.isEmpty()){
+                showError()
+            } else {
+                val intent = Intent(this@PersonalDataActivity, ContactDataActivity::class.java)
+                startActivity(intent)
+            }
         };
 
+    }
+
+    private fun showError() {
+        Toast.makeText(this, "¡Debe llenar todos los campos obligatorios!", Toast.LENGTH_LONG).show()
     }
 
     private fun showDatePickerDialog() {
