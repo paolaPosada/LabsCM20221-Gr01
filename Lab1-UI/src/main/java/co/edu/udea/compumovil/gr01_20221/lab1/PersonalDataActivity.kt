@@ -3,8 +3,10 @@ package co.edu.udea.compumovil.gr01_20221.lab1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.*
-import androidx.core.content.ContentProviderCompat.requireContext
+import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.Toast
 
 class PersonalDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +23,9 @@ class PersonalDataActivity : AppCompatActivity() {
             } else {
                 val intent = Intent(this@PersonalDataActivity, ContactDataActivity::class.java)
                 startActivity(intent)
+                Log.d("Nombres", etNombres.text.toString())
+                Log.d("Apellidos", etApellidos.text.toString())
+                Log.d("Fecha de nacimiento", etFechaNacimiento.text.toString())
             }
         };
 
