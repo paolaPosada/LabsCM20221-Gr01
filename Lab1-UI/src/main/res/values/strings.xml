@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Información Personal</string>
-    <string name="text_nombres">Nombres</string>
-    <string name="text_apellidos">Apellidos</string>
+    <string name="text_nombres">Nombres*</string>
+    <string name="text_apellidos">Apellidos*</string>
     <string name="text_sexo">Sexo</string>
     <string name="text_radio_hombre">Hombre</string>
     <string name="text_radio_mujer">Mujer</string>
-    <string name="text_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="text_fecha_nacimiento">Fecha de nacimiento*</string>
     <string name="text_fecha_cambiar">Cambiar</string>
     <string name="text_spinner_grado">Grado de escolaridad</string>
     <string-array name="opciones_spinner_grado">
@@ -16,12 +16,27 @@
         <item>Otro</item>
     </string-array>
     <string name="text_button_sgt">Siguiente</string>
-    <string name="text_telefono">Teléfono</string>
-    <string name="text_correo">Correo</string>
-    <string name="text_pais">País</string>
+    <string name="text_siguiente">Los campos marcados con asterisco(*) son obligatorios</string>
+
+    <string name="image_icon_name">UserIcon</string>
+    <string name="image_icon_lastname">UserAddIcon</string>
+    <string name="image_icon_gender">UsersIcon</string>
+    <string name="image_icon_date">CalendarIcon</string>
+    <string name="image_icon_graduation">GraduationCapIcon</string>
+    <string name="image_wave">WavesEnd</string>
+
+    <string name="text_telefono">Teléfono*</string>
+    <string name="text_correo">Correo*</string>
+    <string name="text_pais">País*</string>
     <string name="text_ciudad">Ciudad</string>
     <string name="autocomplete_text_ciudad">Ciudad</string>
     <string name="text_direccion">Direccion</string>
+
+    <string name="image_icon_phone">PhoneIcon</string>
+    <string name="image_icon_mail">MailIcon</string>
+    <string name="image_icon_world">WorldIcon</string>
+    <string name="image_icon_city">CityIcon</string>
+    <string name="image_icon_direction">DirectionIcon</string>
     
     <string-array name="paises_latinoamerica">
         <item>Argentina</item>

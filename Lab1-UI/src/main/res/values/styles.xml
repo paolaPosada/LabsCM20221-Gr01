@@ -7,4 +7,9 @@
     <style name="Theme.MyApp" parent="Theme.MaterialComponents.DayNight">
         <!-- ... -->
     </style>
+    <style name="AclarationTheme">
+        <item name="android:fontFamily">@font/actor</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#BFA19F9F</item>
+    </style>
 </resources>

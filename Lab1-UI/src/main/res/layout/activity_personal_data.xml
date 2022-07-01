@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="32dp"
     tools:context=".PersonalDataActivity">
 
 
@@ -50,19 +51,19 @@
           android:layout_marginLeft="16dp"
           android:layout_marginTop="30dp"
           android:text="@string/text_sexo"
-          app:layout_constraintStart_toEndOf="@+id/imageView3"
+          app:layout_constraintStart_toEndOf="@+id/UsersIcon"
           app:layout_constraintTop_toBottomOf="@+id/containerText_Apellidos" />
 
 
       <TextView
           android:id="@+id/text_fecha"
-          android:layout_width="104dp"
-          android:layout_height="wrap_content"
+          android:layout_width="125dp"
+          android:layout_height="48dp"
           android:layout_marginStart="16dp"
           android:layout_marginLeft="16dp"
           android:layout_marginTop="16dp"
           android:text="@string/text_fecha_nacimiento"
-          app:layout_constraintStart_toEndOf="@+id/imageView4"
+          app:layout_constraintStart_toEndOf="@+id/CalendarIcon"
           app:layout_constraintTop_toBottomOf="@+id/radioGroup_Sexo" />
 
       <EditText
@@ -82,7 +83,9 @@
           android:textColor="@color/Pantone"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toEndOf="@+id/text_fecha"
-          app:layout_constraintTop_toBottomOf="@+id/radioGroup_Sexo" />
+          app:layout_constraintTop_toBottomOf="@+id/radioGroup_Sexo"
+          tools:ignore="TextContrastCheck"
+          android:importantForAutofill="no" />
 
       <Spinner
           android:id="@+id/spinner_grado"
@@ -97,17 +100,18 @@
           android:minHeight="48dp"
           android:theme="@style/SpinnerTheme"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toEndOf="@+id/imageView5"
+          app:layout_constraintStart_toEndOf="@+id/GraduationCapIcon"
           app:layout_constraintTop_toBottomOf="@+id/select_fecha" />
 
       <ImageView
-          android:id="@+id/imageView"
+          android:id="@+id/UserIcon"
           android:layout_width="38dp"
           android:layout_height="38dp"
           android:layout_marginStart="16dp"
           android:layout_marginLeft="16dp"
           android:layout_marginTop="32dp"
           android:layout_marginBottom="16dp"
+          android:contentDescription="@string/image_icon_name"
           app:layout_constraintBottom_toTopOf="@+id/containerText_Apellidos"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent"
@@ -124,7 +128,7 @@
           android:layout_marginEnd="24dp"
           android:layout_marginRight="24dp"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toEndOf="@+id/imageView"
+          app:layout_constraintStart_toEndOf="@+id/UserIcon"
           app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -132,7 +136,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/text_nombres"
-                android:inputType="textCapSentences|textNoSuggestions|textEmailAddress" />
+                android:inputType="textCapSentences|textNoSuggestions|textEmailAddress"
+                tools:ignore="TextContrastCheck" />
 
       </com.google.android.material.textfield.TextInputLayout>
 
@@ -147,7 +152,7 @@
           android:layout_marginEnd="24dp"
           android:layout_marginRight="24dp"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toEndOf="@+id/imageView2"
+          app:layout_constraintStart_toEndOf="@+id/UserAddIcon"
           app:layout_constraintTop_toBottomOf="@+id/containerText_Nombres">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -156,51 +161,56 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/text_apellidos"
                 android:inputType="textCapSentences|textNoSuggestions|textEmailAddress"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="TextContrastCheck" />
       </com.google.android.material.textfield.TextInputLayout>
 
       <ImageView
-          android:id="@+id/imageView2"
+          android:id="@+id/UserAddIcon"
           android:layout_width="38dp"
           android:layout_height="42dp"
           android:layout_marginStart="16dp"
           android:layout_marginLeft="16dp"
           android:layout_marginTop="24dp"
+          android:contentDescription="@string/image_icon_lastname"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/containerText_Nombres"
           app:srcCompat="@drawable/user_plus_solid" />
 
       <ImageView
-          android:id="@+id/imageView3"
+          android:id="@+id/UsersIcon"
           android:layout_width="38dp"
           android:layout_height="38dp"
           android:layout_marginStart="16dp"
           android:layout_marginLeft="16dp"
           android:layout_marginTop="32dp"
+          android:contentDescription="@string/image_icon_gender"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/imageView2"
+          app:layout_constraintTop_toBottomOf="@+id/UserAddIcon"
           app:srcCompat="@drawable/user_group_solid" />
 
       <ImageView
-          android:id="@+id/imageView4"
+          android:id="@+id/CalendarIcon"
           android:layout_width="38dp"
           android:layout_height="38dp"
           android:layout_marginStart="16dp"
           android:layout_marginLeft="16dp"
           android:layout_marginTop="32dp"
+          android:contentDescription="@string/image_icon_date"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/imageView3"
+          app:layout_constraintTop_toBottomOf="@+id/UsersIcon"
           app:srcCompat="@drawable/calendar_days_solid" />
 
       <ImageView
-          android:id="@+id/imageView5"
+          android:id="@+id/GraduationCapIcon"
           android:layout_width="38dp"
           android:layout_height="38dp"
           android:layout_marginStart="16dp"
           android:layout_marginLeft="16dp"
           android:layout_marginTop="32dp"
+          android:contentDescription="@string/image_icon_graduation"
           app:layout_constraintStart_toStartOf="parent"
-          app:layout_constraintTop_toBottomOf="@+id/imageView4"
+          app:layout_constraintTop_toBottomOf="@+id/CalendarIcon"
           app:srcCompat="@drawable/graduation_cap_solid" />
 
       <Button
@@ -214,25 +224,31 @@
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/spinner_grado"
-          app:layout_constraintVertical_bias="0.079" />
+          app:layout_constraintVertical_bias="0.079"
+          tools:ignore="TextContrastCheck" />
 
-      <androidx.constraintlayout.widget.Barrier
-          android:id="@+id/barrier2"
+      <TextView
+          android:id="@+id/aclaracion"
+          style="@style/AclarationTheme"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          app:barrierDirection="top" />
+          android:layout_marginEnd="8dp"
+          android:layout_marginRight="8dp"
+          android:text="@string/text_siguiente"
+          android:textColor="#BFA19F9F"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/button_sgte"
+          tools:ignore="TextContrastCheck" />
 
-      <androidx.constraintlayout.widget.Barrier
-          android:id="@+id/barrier3"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          app:barrierDirection="top" />
-
-      <androidx.constraintlayout.widget.Guideline
-          android:id="@+id/guideline5"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:orientation="horizontal"
-          app:layout_constraintGuide_begin="225dp" />
+      <ImageView
+          android:id="@+id/WavesEnd"
+          android:layout_width="469dp"
+          android:layout_height="147dp"
+          android:contentDescription="@string/image_wave"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:srcCompat="@drawable/ic_wave__2_"
+          tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
