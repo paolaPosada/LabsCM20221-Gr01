@@ -1,11 +1,10 @@
 package co.edu.udea.compumovil.gr01_20221.lab1
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.EditText
-import android.widget.Toast
+import android.util.Log
+import android.widget.*
 import co.edu.udea.compumovil.gr01_20221.lab1.model.CitiesResponse
 import co.edu.udea.compumovil.gr01_20221.lab1.model.CountryBody
 import org.json.JSONArray
@@ -33,18 +32,6 @@ class ContactDataActivity : AppCompatActivity() {
 
         autoCompleteViewPais.setAdapter(adapterCountry)
 
-        // Old
-        /*
-             read_json()
-
-             var autoCompleteViewCity = findViewById<AutoCompleteTextView>(R.id.autoComplete_Ciudad)
-             var adapterCity: ArrayAdapter<String> = ArrayAdapter<String>(this,
-                 android.R.layout.simple_dropdown_item_1line, citiesArray)
-            print(citiesArray)
-
-             autoCompleteViewCity.setAdapter(adapterCity)
-        */
-
         val retrofitBuilder = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("https://countriesnow.space/api/v0.1/countries/")
@@ -69,6 +56,37 @@ class ContactDataActivity : AppCompatActivity() {
                 configureCities()
             }
         })
+
+        findViewById<Button>(R.id.button_sget_v2).setOnClickListener {
+
+            var etTelefono = findViewById<EditText>(R.id.editText_Telefono)
+            var etCorreo = findViewById<EditText>(R.id.editText_Correo)
+            var etDireccion = findViewById<EditText>(R.id.editText_Direccion)
+            var autoCompleteViewCity = findViewById<AutoCompleteTextView>(R.id.autoComplete_Ciudad)
+            autoCompleteViewPais = findViewById<AutoCompleteTextView>(R.id.autoComplete_Pais)
+
+            if( etTelefono.text.isEmpty()  || etCorreo.text.isEmpty() || autoCompleteViewPais.text.isEmpty()){
+                showError()
+            } else {
+                Toast.makeText(this, "¡Muy bien!, revisa los datos ingresados en Logcat", Toast.LENGTH_LONG).show()
+                var intent: Intent = getIntent()
+                val nombreCompleto = intent.getStringExtra("fullName")
+                val genero = intent.getStringExtra("gender")
+                val fechaNacimiento = intent.getStringExtra("birthDate")
+                val gradoEscolaridad = intent.getStringExtra("schoolGrade")
+                Log.d("-----", "Información personal-----")
+                Log.d("Nombre completo ", nombreCompleto.toString())
+                Log.d("Género ", genero.toString())
+                Log.d("Nació el ", fechaNacimiento.toString())
+                Log.d("Grado de escolaridad ", gradoEscolaridad.toString())
+                Log.d("-----", "Información de contacto-----")
+                Log.d("Teléfono ", etTelefono.text.toString())
+                Log.d("Dirección ", etDireccion.text.toString())
+                Log.d("Email ", etCorreo.text.toString())
+                Log.d("País ", autoCompleteViewPais.text.toString())
+                Log.d("Ciudad ", autoCompleteViewCity.text.toString())
+            }
+        };
     }
 
     fun configureCities() {
@@ -79,25 +97,7 @@ class ContactDataActivity : AppCompatActivity() {
         autoCompleteViewCity.setAdapter(adapterCity)
     }
 
-
-    fun read_json(){
-
-        var json: String? = null
-
-        try{
-            val inputStream: InputStream = assets.open("colombianCities.json")
-            json = inputStream.bufferedReader().use{it.readText()}
-
-            var jsonArray = JSONArray(json)
-
-            for (i in 0..jsonArray.length() - 1){
-                var jsonObject = jsonArray.getJSONObject(i)
-                citiesArray.add(jsonObject.getString("cityName"))
-            }
-
-        } catch (e: IOException){
-            print(e)
-        }
-
+    private fun showError() {
+        Toast.makeText(this, "¡Debe llenar todos los campos obligatorios!", Toast.LENGTH_LONG).show()
     }
 }
