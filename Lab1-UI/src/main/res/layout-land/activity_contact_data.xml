@@ -4,7 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="32dp"
+    android:layout_marginStart="24dp"
+    android:layout_marginLeft="24dp"
+    android:layout_marginEnd="24dp"
+    android:layout_marginRight="24dp"
     tools:context=".ContactDataActivity">
 
     <ImageView
@@ -15,6 +18,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/image_icon_world"
+        app:layout_constraintEnd_toStartOf="@+id/containerText_Pais"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/MailIcon"
         app:srcCompat="@drawable/earth_americas_solid" />
@@ -27,6 +32,8 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/image_icon_phone"
+        app:layout_constraintEnd_toStartOf="@+id/containerText_Telefono"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/phone_solid" />
@@ -35,38 +42,42 @@
         android:id="@+id/MailIcon"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:layout_weight="1"
         android:contentDescription="@string/image_icon_mail"
         app:layout_constraintEnd_toStartOf="@+id/containerText_Correo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PhoneIcon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/containerText_Telefono"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/envelope_solid" />
 
     <ImageView
         android:id="@+id/CityIcon"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/image_icon_city"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/WorldIcon"
+        app:layout_constraintEnd_toStartOf="@+id/containerText_Ciudad"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/containerText_Pais"
+        app:layout_constraintTop_toBottomOf="@+id/MailIcon"
         app:srcCompat="@drawable/city_solid" />
 
     <ImageView
         android:id="@+id/DirectionIcon"
         android:layout_width="38dp"
         android:layout_height="38dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginTop="24dp"
         android:contentDescription="@string/image_icon_direction"
+        app:layout_constraintEnd_toStartOf="@+id/containerText_Direccion"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CityIcon"
+        app:layout_constraintTop_toBottomOf="@+id/containerText_Pais"
         app:srcCompat="@drawable/route_solid" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -77,11 +88,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/containerText_Correo"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/MailIcon"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/PhoneIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread">
@@ -102,18 +110,18 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/containerText_Pais"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/MailIcon"
-        app:layout_constraintTop_toBottomOf="@+id/containerText_Telefono">
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText_Correo"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="51dp"
             android:hint="@string/text_correo"
             android:inputType="none|textEmailAddress"
             tools:ignore="TextContrastCheck" />
@@ -127,24 +135,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:hint="@string/text_pais"
-        app:layout_constraintBottom_toTopOf="@+id/containerText_Ciudad"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/CityIcon"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/WorldIcon"
-        app:layout_constraintTop_toBottomOf="@+id/containerText_Correo">
+        app:layout_constraintTop_toBottomOf="@+id/containerText_Telefono">
 
         <AutoCompleteTextView
             android:id="@+id/autoComplete_Pais"
             android:layout_width="match_parent"
             android:layout_height="52sp"
-            android:paddingLeft="18sp"
-            android:paddingTop="10sp"
+            android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
-            android:imeOptions="actionNext"
+            android:paddingLeft="18sp"
+            android:paddingTop="2sp"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -155,24 +161,24 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
         android:hint="@string/text_ciudad"
-        app:layout_constraintBottom_toTopOf="@+id/containerText_Direccion"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/CityIcon"
-        app:layout_constraintTop_toBottomOf="@+id/containerText_Pais">
+        app:layout_constraintTop_toBottomOf="@+id/containerText_Correo">
 
         <AutoCompleteTextView
             android:id="@+id/autoComplete_Ciudad"
             android:layout_width="match_parent"
             android:layout_height="52sp"
-            android:paddingLeft="18sp"
-            android:paddingTop="10sp"
+            android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
-            android:imeOptions="actionNext"
+            android:paddingLeft="18sp"
+            android:paddingTop="2sp"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -184,11 +190,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="92dp"
+        android:layout_marginRight="92dp"
+        app:layout_constraintEnd_toStartOf="@+id/button_sget_v2"
         app:layout_constraintStart_toEndOf="@+id/DirectionIcon"
-        app:layout_constraintTop_toBottomOf="@+id/containerText_Ciudad">
+        app:layout_constraintTop_toBottomOf="@+id/containerText_Pais">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText_Direccion"
@@ -204,13 +210,13 @@
         android:id="@+id/button_sget_v2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_weight="1"
         android:text="@string/text_button_sgt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerText_Direccion"
+        app:layout_constraintTop_toBottomOf="@+id/containerText_Ciudad"
         tools:ignore="TextContrastCheck" />
 
     <TextView
@@ -218,7 +224,7 @@
         style="@style/AclarationTheme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:text="@string/text_siguiente"
@@ -226,16 +232,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_sget_v2"
         tools:ignore="TextContrastCheck" />
-
-    <ImageView
-        android:id="@+id/wavesEnd"
-        android:layout_width="469dp"
-        android:layout_height="147dp"
-        android:contentDescription="@string/image_wave"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/ic_wave__2_"
-        tools:ignore="ImageContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
