@@ -15,10 +15,14 @@
         tools:targetApi="31">
         <activity
             android:name=".ContactDataActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:label="@string/app_contact_name"
+            />
         <activity
             android:name=".PersonalDataActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/app_personal_name"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
