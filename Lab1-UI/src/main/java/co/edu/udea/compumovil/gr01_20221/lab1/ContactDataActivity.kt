@@ -68,12 +68,27 @@ class ContactDataActivity : AppCompatActivity() {
             if( etTelefono.text.isEmpty()  || etCorreo.text.isEmpty() || autoCompleteViewPais.text.isEmpty()){
                 showError()
             } else {
-                Toast.makeText(this, "¡Muy bien!, revisa los datos ingresados en Logcat", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "✔", Toast.LENGTH_LONG).show()
                 var intent: Intent = getIntent()
                 val nombreCompleto = intent.getStringExtra("fullName")
                 val genero = intent.getStringExtra("gender")
                 val fechaNacimiento = intent.getStringExtra("birthDate")
                 val gradoEscolaridad = intent.getStringExtra("schoolGrade")
+                var ciudad = "";
+                ciudad = if (autoCompleteViewCity.text.isEmpty()){
+                    "No aplica"
+                } else {
+                    autoCompleteViewCity.text.toString()
+                }
+
+                var direccion = "";
+                direccion = if (etDireccion.text.isEmpty()){
+                    "No aplica"
+                } else {
+                    etDireccion.text.toString()
+                }
+
+
                 Log.d("-----", "Información personal-----")
                 Log.d("Nombre completo ", nombreCompleto.toString())
                 Log.d("Género ", genero.toString())
@@ -81,10 +96,10 @@ class ContactDataActivity : AppCompatActivity() {
                 Log.d("Grado de escolaridad ", gradoEscolaridad.toString())
                 Log.d("-----", "Información de contacto-----")
                 Log.d("Teléfono ", etTelefono.text.toString())
-                Log.d("Dirección ", etDireccion.text.toString())
+                Log.d("Dirección ", direccion)
                 Log.d("Email ", etCorreo.text.toString())
                 Log.d("País ", autoCompleteViewPais.text.toString())
-                Log.d("Ciudad ", autoCompleteViewCity.text.toString())
+                Log.d("Ciudad ", ciudad)
             }
         };
     }
@@ -98,6 +113,6 @@ class ContactDataActivity : AppCompatActivity() {
     }
 
     private fun showError() {
-        Toast.makeText(this, "¡Debe llenar todos los campos obligatorios!", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "❌  Error", Toast.LENGTH_LONG).show()
     }
 }

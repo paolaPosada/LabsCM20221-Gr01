@@ -35,9 +35,6 @@ class PersonalDataActivity : AppCompatActivity() {
                 gradoEscolaridad = "Sin selección"
             }
 
-
-            Log.d("gradito:----- ", gradoEscolaridad)
-            Log.d("checked:----- ", genero)
             if( etNombres.text.isEmpty()  || etApellidos.text.isEmpty() || etFechaNacimiento.text.isEmpty()){
                 showError()
             } else {
@@ -54,7 +51,7 @@ class PersonalDataActivity : AppCompatActivity() {
     }
 
     private fun showError() {
-        Toast.makeText(this, "¡Debe llenar todos los campos obligatorios!", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "❌  Error", Toast.LENGTH_LONG).show()
     }
 
     private fun showDatePickerDialog() {
