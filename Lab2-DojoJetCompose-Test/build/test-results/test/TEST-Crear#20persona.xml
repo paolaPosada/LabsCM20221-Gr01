@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Crear persona" tests="3" skipped="0" failures="2" errors="0" timestamp="2022-08-01T21:03:18" hostname="SWO-76037002" time="82.928">
+  <properties/>
+  <testcase name="Crear una persona exitoso" classname="Crear persona" time="30.39"/>
+  <testcase name="Crear una persona exitoso" classname="Crear persona" time="26.692">
+    <failure message="java.lang.AssertionError: &#10;Expected: not (null or an empty string)&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: not (null or an empty string)
+     but: was &quot;&quot;
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:301)
+	at co.edu.udea.compumovil.certificacion.stepdefinitions.CrearPersonaStepDefinitions.elUsuarioVisualizaLaNuevaPersonaEnLaLista(CrearPersonaStepDefinitions.java:49)
+	at ✽.El usuario visualiza la nueva persona en la lista(src/test/resources/features/crear_persona.feature:7)
+</failure>
+  </testcase>
+  <testcase name="Crear una persona exitoso" classname="Crear persona" time="25.837">
+    <failure message="java.lang.AssertionError: &#10;Expected: not (null or an empty string)&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">java.lang.AssertionError: 
+Expected: not (null or an empty string)
+     but: was &quot;&quot;
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:301)
+	at co.edu.udea.compumovil.certificacion.stepdefinitions.CrearPersonaStepDefinitions.elUsuarioVisualizaLaNuevaPersonaEnLaLista(CrearPersonaStepDefinitions.java:49)
+	at ✽.El usuario visualiza la nueva persona en la lista(src/test/resources/features/crear_persona.feature:7)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[ago 01, 2022 4:03:37 P. M. io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+ago 01, 2022 4:04:05 P. M. io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+ago 01, 2022 4:04:31 P. M. io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>

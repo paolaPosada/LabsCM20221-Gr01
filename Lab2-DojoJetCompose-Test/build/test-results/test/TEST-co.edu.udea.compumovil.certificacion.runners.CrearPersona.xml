@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="co.edu.udea.compumovil.certificacion.runners.CrearPersona" tests="0" skipped="0" failures="0" errors="0" timestamp="1970-01-01T00:00:00" hostname="SWO-76037002" time="0.0">
+  <properties/>
+  <system-out><![CDATA[
+?[31mFailed scenarios:?[0m
+?[31msrc/test/resources/features/crear_persona.feature:12 ?[0m# Crear una persona exitoso
+?[31msrc/test/resources/features/crear_persona.feature:13 ?[0m# Crear una persona exitoso
+
+3 Scenarios (?[31m2 failed?[0m, ?[32m1 passed?[0m)
+12 Steps (?[31m2 failed?[0m, ?[32m10 passed?[0m)
+1m23.268s
+
+java.lang.AssertionError: 
+Expected: not (null or an empty string)
+     but: was ""
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:301)
+	at co.edu.udea.compumovil.certificacion.stepdefinitions.CrearPersonaStepDefinitions.elUsuarioVisualizaLaNuevaPersonaEnLaLista(CrearPersonaStepDefinitions.java:49)
+	at ?.El usuario visualiza la nueva persona en la lista(src/test/resources/features/crear_persona.feature:7)
+
+java.lang.AssertionError: 
+Expected: not (null or an empty string)
+     but: was ""
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:301)
+	at co.edu.udea.compumovil.certificacion.stepdefinitions.CrearPersonaStepDefinitions.elUsuarioVisualizaLaNuevaPersonaEnLaLista(CrearPersonaStepDefinitions.java:49)
+	at ?.El usuario visualiza la nueva persona en la lista(src/test/resources/features/crear_persona.feature:7)
+
+]]></system-out>
+  <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+</testsuite>

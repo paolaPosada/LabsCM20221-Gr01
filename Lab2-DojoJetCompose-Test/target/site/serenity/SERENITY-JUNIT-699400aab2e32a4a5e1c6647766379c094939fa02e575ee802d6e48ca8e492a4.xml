@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="2" name="Crear persona" skipped="0" tests="3" time="57.16" timestamp="2022-08-01 04:03:18"><testcase name="Crear una persona exitoso"><failure message="&#10;Expected: not (null or an empty string)&#10;     but: was &quot;&quot;" type="java.lang.AssertionError">
+Expected: not (null or an empty string)
+     but: was ""</failure><system-err>
+Expected: not (null or an empty string)
+     but: was ""&#13;
+co.edu.udea.compumovil.certificacion.stepdefinitions.CrearPersonaStepDefinitions.elUsuarioVisualizaLaNuevaPersonaEnLaLista(CrearPersonaStepDefinitions.java:49)&#13;
+✽.El usuario visualiza la nueva persona en la lista(src/test/resources/features/crear_persona.feature:7)&#13;
+</system-err></testcase></testsuite>
